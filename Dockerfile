@@ -13,7 +13,7 @@ ENV MEMORY_SIZE="2G" \
     PAPERMC_BUILD="latest"
 
 # PaperMCのダウンロードと設定を行うスクリプトを作成
-RUN curl https://raw.githubusercontent.com/takoyakidath/Minecraft-Docker/refs/heads/main/start.sh?token=GHSAT0AAAAAAC5H6JGBCYNSJGZL3XJMYCHWZ4KKR7A > /minecraft/start.sh && \
+RUN curl https://raw.githubusercontent.com/takoyakidath/Minecraft-Docker/refs/heads/main/start.sh?token=GHSAT0AAAAAAC5H6JGBCYNSJGZL3XJMYCHWZ4KKR7A > /minecraft/start.sh
 
 # eula.txtを作成して同意
 RUN echo "eula=true" > eula.txt
