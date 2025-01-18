@@ -22,7 +22,12 @@ RUN echo '#!/bin/sh' > /minecraft/start.sh && \
     echo 'fi' >> /minecraft/start.sh && \
     echo 'exec java -Xms${MEMORY_SIZE} -Xmx${MEMORY_SIZE} -jar paper.jar nogui' >> /minecraft/start.sh && \
     chmod +x /minecraft/start.sh
-
+    
+# world download 
+RUN apk add --no-cache unzip && \
+    wget https://github.com/takoyakidath/Minecraft-Docker/raw/refs/heads/main/world.zip
+    unzip world.zip
+    
 # eula.txtを作成して同意
 RUN echo "eula=true" > eula.txt
 
