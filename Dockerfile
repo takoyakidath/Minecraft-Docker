@@ -26,6 +26,8 @@ RUN echo '#!/bin/sh' > /minecraft/start.sh && \
 # world download 
 RUN wget https://github.com/takoyakidath/Minecraft-Docker/raw/refs/heads/main/world.zip && \
     unzip world.zip
+# setting server.properties
+RUN wget https://raw.githubusercontent.com/takoyakidath/Minecraft-Docker/refs/heads/main/server.properties
     
 # eula.txtを作成して同意
 RUN echo "eula=true" > eula.txt
