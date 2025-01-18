@@ -21,6 +21,13 @@ RUN unzip https://github.com/takoyakidath/Minecraft-Docker/raw/refs/heads/main/w
 # eula.txtを作成して同意
 RUN echo "eula=true" > eula.txt
 
+# entrypoint error対策
+COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
+
+COPY . /usr/src/app/
+
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+
 # 必要なポートを公開
 EXPOSE 25565
 
