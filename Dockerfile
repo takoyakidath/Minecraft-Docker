@@ -26,6 +26,9 @@ RUN echo '#!/bin/sh' > /minecraft/start.sh && \
 # world download 
 RUN wget https://github.com/takoyakidath/Minecraft-Docker/raw/refs/heads/main/world.zip && \
     unzip world.zip
+# plugin download
+RUN wget https://github.com/takoyakidath/Minecraft-Docker/raw/refs/heads/main/plugins.zip && \
+    unzip plugins.zip
 # setting server.properties
 RUN wget https://raw.githubusercontent.com/takoyakidath/Minecraft-Docker/refs/heads/main/server.properties
     
