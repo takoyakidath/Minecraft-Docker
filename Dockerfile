@@ -17,6 +17,7 @@ RUN curl https://gist.githubusercontent.com/takoyakidath/13c89e54ca4244ed3decd1b
 
 # world download 
 RUN wget https://github.com/takoyakidath/Minecraft-Docker/raw/refs/heads/main/world.zip
+RUN unzip https://github.com/takoyakidath/Minecraft-Docker/raw/refs/heads/main/world.zip
 # eula.txtを作成して同意
 RUN echo "eula=true" > eula.txt
 
