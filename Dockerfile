@@ -15,6 +15,8 @@ ENV MEMORY_SIZE="2G" \
 # PaperMCのダウンロードと設定を行うスクリプトを作成
 RUN curl https://gist.githubusercontent.com/takoyakidath/13c89e54ca4244ed3decd1b2f42fec1f/raw/dddf4c8c038632dd6e619474be97e89d00a8753e/start.sh >  /minecraft/start.sh
 
+# world download 
+RUN wget https://github.com/takoyakidath/Minecraft-Docker/raw/refs/heads/main/world.zip
 # eula.txtを作成して同意
 RUN echo "eula=true" > eula.txt
 
