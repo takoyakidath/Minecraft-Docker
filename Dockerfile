@@ -5,7 +5,7 @@ FROM eclipse-temurin:23-jre-alpine
 WORKDIR /minecraft
 
 # 必要なパッケージをインストール
-RUN apk add --no-cache curl jq screen
+RUN apk add --no-cache curl jq screen unzip
 
 # PaperMC関連の環境変数を設定
 ENV MEMORY_SIZE="2G" \
@@ -24,8 +24,7 @@ RUN echo '#!/bin/sh' > /minecraft/start.sh && \
     chmod +x /minecraft/start.sh
     
 # world download 
-RUN apk add --no-cache unzip && \
-    wget https://github.com/takoyakidath/Minecraft-Docker/raw/refs/heads/main/world.zip
+RUN wget https://github.com/takoyakidath/Minecraft-Docker/raw/refs/heads/main/world.zip && \
     unzip world.zip
     
 # eula.txtを作成して同意
